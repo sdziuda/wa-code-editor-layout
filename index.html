@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Code Compiler</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-item">
+                    Plik
+                </div>
+                <div class="navbar-item">
+                    Edycja
+                </div>  
+                <div class="navbar-item">
+                    Opcje
+                </div> 
+            </div>
+            <div class="sidebar">
+                /<br>
+                <ul>
+                    <li>etc/</li>
+                    <li class="parent">
+                        <ul>
+                            <li>apache2/</li>
+                            <li>passwd</li>
+                        </ul>
+                    </li>
+                    <li>mnt/</li>
+                    <li>home/</li>
+                    <li>var/</li>
+                    <li class="parent">
+                        <ul>
+                            <li>www/</li>
+                            <li class="parent">
+                                <ul>
+                                    <li>index.html</li>
+                                    <li>main.js</li>
+                                    <li>style.js</li>    
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="main">
+                <pre>
+#include &lt;mcs51/8051.h&gt;
+
+unsigned char count = 0;
+
+void setup()
+{
+    // set timer 0 mode 1
+    TMOD = 0x01;
+    TH0 = 0x4C;
+    TL0 = 0x00;
+
+    // start timer 0
+    TR0 = 1;
+    // enable timer 0 interrupt
+    ET0 = 1;
+    // enable all interrupt
+    EA = 1;
+}
+
+void loop()
+{
+    if(count%20 == 0)
+    {
+        P0_0 = !P0_0;
+        count = 0;
+    }
+}
+
+void main()
+{
+    setup();
+    while(1) loop();
+}
+
+void timer0() __interrupt 1
+{
+    count++;
+}
+                </pre>
+            </div>
+            <div class="snippet">
+                <pre>
+void setup()
+{
+    // set timer 0 mode 1
+    TMOD = 0x01;
+    TH0 = 0x4C;
+    TL0 = 0x00;
+
+    // start timer 0
+    TR0 = 1;
+    // enable timer 0 interrupt
+    ET0 = 1;
+    // enable all interrupt
+    EA = 1;
+}
+                </pre>
+            </div>
+            <div class="tab">
+                <div class="tabbar">
+                    <div class="tabbar-item">
+                        Tab1
+                    </div>
+                    <div class="tabbar-item">
+                        Tab2
+                    </div>
+                    <div class="tabbar-item">
+                        Tab3
+                    </div>
+                    <div class="tabbar-item">
+                        Tab4
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-area">
+                        Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst                         Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst                         Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst                         Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst                         Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst                         Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst                         Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst Jakiś tekst
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

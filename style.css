@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+pre {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: outside;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.parent {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+    grid-template-rows: 7vh 67vh 26vh;
+    grid-template-areas: 
+        "header header header"
+        "sidebar main snippet"
+        "sidebar tab tab";
+}
+
+.navbar {
+    grid-area: header;
+    background-color: #3f3f3f;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.navbar-item {
+    padding: 0 10px;
+    color: lightgrey;
+    text-decoration: none;
+    font-size: 2.5vh;
+}
+
+.navbar-item:hover {
+    color: white;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #353535;
+    padding: 10px;
+    color: lightgrey;
+    overflow: auto;
+}
+
+.main {
+    grid-area: main;
+    background-color: #2a2a2a;
+    padding: 10px;
+    background-color: #333333;
+    color: lightgrey;
+    overflow: auto;
+    border-left: #1d1d1d 2px solid;
+}
+
+.snippet {
+    grid-area: snippet;
+    padding: 10px;
+    background-color: #333333;
+    color: lightgrey;
+    overflow: auto;
+    border-left: #1d1d1d 2px solid;
+}
+
+.tab {
+    grid-area: tab;
+    background-color: #1d1d1d;
+}
+
+.tabbar {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 2px;
+    gap: 2px;
+    height: 15%;
+}
+
+.tabbar-item {
+    padding: 0 10px;
+    height: 100%;
+    width: 7%;
+    color: lightgrey;
+    text-decoration: none;
+    font-size: 2.5vh;
+    background-color: #3f3f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+.tabbar-item:hover {
+    background-color: #333333;
+}
+
+.tab-content {
+    height: 85%;
+    background-color: #333333;
+    overflow: auto;
+    border-left: #1d1d1d 2px solid;
+}
+
+.tab-area {
+    padding: 10px;
+    color: lightgrey;
+}
+
+::-webkit-scrollbar {
+    width: 17px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2a2a2a; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f3f3f; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #535353; 
+}
